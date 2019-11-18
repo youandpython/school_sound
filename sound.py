@@ -1,3 +1,8 @@
+# Win10, PyCharm Professional 2019.2
+# Author: Zhang Bohua
+# Date: 2019.11.18
+# Version: 1.0, the style is command line.
+
 from playsound import playsound
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -82,7 +87,7 @@ def other():  # 其它时间事件预留
 scheduler = BlockingScheduler()
 
 '''红歌'''
-trigger_red_song = CronTrigger(day_of_week='0-4', hour=15, minute=54, second=0)  # 周一上午预铃时间变为上课时间7：50
+trigger_red_song = CronTrigger(day_of_week='0-4', hour=7, minute=20, second=0)  # 周一上午预铃时间变为上课时间7：50
 scheduler.add_job(red_song, trigger_red_song)
 
 
@@ -145,7 +150,7 @@ trigger_class_over_15_30 = CronTrigger(day_of_week='0-4', hour=15, minute=30, se
 scheduler.add_job(pm_second_class_over_and_sport, trigger_class_over_15_30)
 
 '''周一到周五下午第三节'''
-trigger_class_begin_15_40 = CronTrigger(day_of_week='0-4', hour=15, minute=50, second=0)  # 周一到周五下午第二节上课时间15:40
+trigger_class_begin_15_40 = CronTrigger(day_of_week='0-4', hour=15, minute=50, second=0)  # 周一到周五下午第二节上课时间15:50
 scheduler.add_job(pm_third_class_begin, trigger_class_begin_15_40)
 trigger_class_over_16_30 = CronTrigger(day_of_week='0-4', hour=16, minute=30, second=0)  # 周一到周五下午第二节下课时间16:30
 scheduler.add_job(pm_third_class_over_and_shool_over, trigger_class_over_16_30)
